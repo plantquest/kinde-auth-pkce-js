@@ -184,7 +184,9 @@ const createKindeClient = async (
             client_id: config.client_id,
             grant_type: 'refresh_token',
             ...(!isUseCookie &&
-              localStorageRefreshToken && {refresh_token: localStorageRefreshToken})
+              localStorageRefreshToken && {
+                refresh_token: localStorageRefreshToken
+              })
           })
         });
 
@@ -251,13 +253,13 @@ const createKindeClient = async (
     const orgCode = getClaimValue('org_code') as string;
     let permissions = getClaimValue('permissions');
     if (permissions === null || permissions === undefined) {
-        permissions = [] as string[]; // Cast permissions to string array
+      permissions = [] as string[]; // Cast permissions to string array
     }
     permissions = permissions as string[];
-    
+
     return {
-        permissions,
-        orgCode
+      permissions,
+      orgCode
     };
   };
 
@@ -265,14 +267,14 @@ const createKindeClient = async (
     const orgCode = getClaimValue('org_code') as string;
     let permissions = getClaimValue('permissions');
     if (permissions === null || permissions === undefined) {
-        permissions = [];
+      permissions = [];
     }
     permissions = permissions as string[];
     return {
       isGranted: permissions.some((p) => p === key),
       orgCode
     };
-};
+  };
 
   const getOrganization = (): KindeOrganization => {
     const orgCode = getClaimValue('org_code') as string;

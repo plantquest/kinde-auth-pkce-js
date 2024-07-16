@@ -1,7 +1,7 @@
 {
   "name": "@plantquest/kinde-auth-pkce-js",
-  "version": "4.1.1",
-  "description": "Kinde PKCE authentication for SPAs",
+  "version": "0.0.1",
+  "description": "PlantQuest Kinde PKCE authentication for SPAs",
   "module": "dist/kinde-auth-pkce-js.esm.js",
   "main": "dist/kinde-auth-pkce-js.umd.min.js",
   "types": "dist/index.d.ts",
