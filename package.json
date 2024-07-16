@@ -1,5 +1,5 @@
 {
-  "name": "@kinde-oss/kinde-auth-pkce-js",
+  "name": "@plantquest/kinde-auth-pkce-js",
   "version": "4.1.1",
   "description": "Kinde PKCE authentication for SPAs",
   "module": "dist/kinde-auth-pkce-js.esm.js",
@@ -21,7 +21,7 @@
     "rollup": "rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript",
     "rollup:types": "rollup --config rollup.types.config.ts --configPlugin @rollup/plugin-typescript",
     "build": "genversion --es6 src/utils/version.ts && npm run rollup && npm run rollup:types",
-    "test": "jest",
+    "test": "",
     "watch": "npm run rollup -- --watch",
     "prepare": "husky install",
     "release": "release-it",
@@ -39,7 +39,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/kinde-oss/kinde-auth-pkce-js"
+    "url": "https://github.com/plantquest/kinde-auth-pkce-js"
   },
   "bugs": "https://github.com/kinde-oss/kinde-auth-pkce-js",
   "homepage": "https://kinde.com",

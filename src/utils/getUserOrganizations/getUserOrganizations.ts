@@ -1,11 +1,13 @@
 import {getClaimValue} from '../getClaimValue/getClaimValue';
+const orgCodes = [];
 
 const getUserOrganizations = (): {orgCodes: string[]} => {
   let orgCodes = getClaimValue('org_codes', 'id_token');
-  if (orgCodes === null || orgCodes === undefined) {
+  if (!Array.isArray(orgCodes)) {
     orgCodes = [];
+  } else {
+    orgCodes = orgCodes.filter((item) => typeof item === 'string');
   }
-  orgCodes = orgCodes as string[];
   return {
     orgCodes
   };
