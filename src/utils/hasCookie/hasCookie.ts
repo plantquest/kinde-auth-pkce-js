@@ -1,7 +1,18 @@
-const hasCookie = (name: string) =>
-  document.cookie
+const hasCookie = (name: string) => {
+
+  let cookie = document.cookie
     .split('; ')
     .find((row) => row.split('=')[0] === name)
-    ?.split('=')[1];
+    
+    if(cookie && cookie.split('=')[1] !== 'undefined'){
+      return cookie.split('=')[1];
+    }
+    else{
+      return null;
+    }
+
+};
+  
+    
 
 export {hasCookie};

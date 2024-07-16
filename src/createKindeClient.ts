@@ -249,21 +249,30 @@ const createKindeClient = async (
 
   const getPermissions = (): KindePermissions => {
     const orgCode = getClaimValue('org_code') as string;
-    const permissions = (getClaimValue('permissions') ?? []) as string[];
+    let permissions = getClaimValue('permissions');
+    if (permissions === null || permissions === undefined) {
+        permissions = [] as string[]; // Cast permissions to string array
+    }
+    permissions = permissions as string[];
+    
     return {
-      permissions,
-      orgCode
+        permissions,
+        orgCode
     };
   };
 
   const getPermission = (key: string): KindePermission => {
     const orgCode = getClaimValue('org_code') as string;
-    const permissions = (getClaimValue('permissions') ?? []) as string[];
+    let permissions = getClaimValue('permissions');
+    if (permissions === null || permissions === undefined) {
+        permissions = [];
+    }
+    permissions = permissions as string[];
     return {
       isGranted: permissions.some((p) => p === key),
       orgCode
     };
-  };
+};
 
   const getOrganization = (): KindeOrganization => {
     const orgCode = getClaimValue('org_code') as string;
